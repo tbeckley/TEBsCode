@@ -1,0 +1,38 @@
+﻿/*LINK FLAIR*/
+.linkflair-image .linkflairlabel {
+    background-color: #FF0000;
+}
+.linkflair-discussion .linkflairlabel {
+    background-color: #00FF00;
+}
+.linkflair-video .linkflairlabel {
+    background-color: #0000FF;
+}
+
+/*REDDIT STUFF*/
+/*HEADER*/
+#header {
+    height: 239px;
+    background: url(%%header%%) 50% 19px;
+}
+#header-bottom-left {
+    position: absolute;
+    bottom: 0;
+}
+/*SUB LOGO*/
+span.pagename.redditname a {
+    color: transparent;
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    background-image: url(%%sublogo%%);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 1;
+    top: 107px;
+    left: 205px;
+}
+
+/*MY CLASSES*/

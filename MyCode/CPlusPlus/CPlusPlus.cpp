@@ -2,12 +2,14 @@
 //
 
 #include "stdafx.h"
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <math.h> 
 #include <iomanip>
 
+#include "thomasHeader.h"
 using namespace std;
 
 void printArray(int arrayContents[], int arraySize, int rowWidth, int endLines)
@@ -38,32 +40,20 @@ int main()
 
 	int array_contents[array_size];
 
-
-	//FILL AND PRINT
-	cout << "PRE SORT" << endl;
+	//FILL
 	for (int i = 0; i < array_size; i++)
 		array_contents[i] = rand() % max_val;
 
-
+	//PRINT
+	cout << "PRE SORT" << endl;
 	printArray(array_contents, array_size, row_width,1);
+	
+	//SORT
+	bubbleSort(array_contents, array_size);
 
+	//PRINT
 	cout << "SORTED" << endl;
-
-	//X = WHERE TO GO TO
-	for (int x = array_size; x > 1; x--)
-	{
-		for (int i = 0; i < x; i++)
-		{
-			if (array_contents[i] < array_contents[i + 1])
-			{
-				int tmp = array_contents[i];
-				array_contents[i] = array_contents[i + 1];
-				array_contents[i + 1] = tmp;
-			}
-		}
-	}
-	printArray(array_contents, array_size, row_width,1);
-	cout << endl;
+	printArray(array_contents, array_size, row_width,2);
 
 	system("pause");
 	return 0;

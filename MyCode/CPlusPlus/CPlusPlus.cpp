@@ -33,6 +33,18 @@ int main()
 {
 	srand((unsigned int)time(NULL)); //SEED RANDOM NUMBER GEN
 
+	int x = 4, y = 3;
+	swapInts(&x, &y);
+	cout << x << "  |  " << y << endl;
+
+	int stuff[2];  , 3];
+
+
+	system("pause");
+	return 0;
+}
+void arrayAction()
+{
 	//CONSTANTS
 	const int array_size = 16;
 	const int row_width = 4;
@@ -46,15 +58,12 @@ int main()
 
 	//PRINT
 	cout << "PRE SORT" << endl;
-	printArray(array_contents, array_size, row_width,1);
-	
+	printArray(array_contents, array_size, row_width, 1);
+
 	//SORT
 	bubbleSort(array_contents, array_size);
 
 	//PRINT
 	cout << "SORTED" << endl;
-	printArray(array_contents, array_size, row_width,2);
-
-	system("pause");
-	return 0;
+	printArray(array_contents, array_size, row_width, 2);
 }

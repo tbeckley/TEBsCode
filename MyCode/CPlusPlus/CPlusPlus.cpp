@@ -13,22 +13,7 @@
 #include "thomasHeader.h"
 using namespace std;
 
-void printArray(int arrayContents[], int arraySize, int rowWidth, int endLines)
-{
-	for (int i = 0; i < ceil(arraySize / rowWidth); i++)
-	{
-		for (int c = 0; c < rowWidth; c++)
-		{
-			int arrayLocation = i*rowWidth + c;
-			cout << setfill('0') << setw(2) << arrayContents[arrayLocation];
-			if (rowWidth - c > 1)
-				cout << ' ';
-		}
-		cout << endl;
-	}
-	for (int i = 0; i < endLines; i++)
-		cout << endl;
-}
+void arrayAction();
 
 double squareMe(double x)
 {
@@ -46,12 +31,17 @@ double getIRC(double(*ptr)(double), int x)
 
 int main()
 {
+	cout << AdvMath.H(4) << endl;
+
+
 	srand((unsigned int)time(NULL)); //SEED RANDOM NUMBER GEN
 
-	cout << getIRC(squareMe, 4) << endl;
+	arrayAction();
+
 	system("pause");
 	return 0;
 }
+
 void arrayAction()
 {
 	//CONSTANTS
@@ -66,14 +56,27 @@ void arrayAction()
 		array_contents[i] = rand() % max_val;
 
 	//PRINT
-	cout << "PRE SORT" << endl;
-	printArray(array_contents, array_size, row_width, 1);
-
-	//SORT
 	bubbleSort(array_contents, array_size);
+	printArrayVert(array_contents, array_size);
+
+	int target = 0;
+
+	while (target != -1)
+	{
+		cout << "What to find: ";
+		cin >> target;
+
+		if (target == -1)
+			break;
+
+		int loc = findInArray(array_contents, array_size, target);
+		if (loc != -1)
+			cout << "Location: " << loc << endl;
+		else
+			cout << "Not found" << endl;
+	}
 
 	//PRINT
 	cout << "SORTED" << endl;
 	printArray(array_contents, array_size, row_width, 2);
 }
-

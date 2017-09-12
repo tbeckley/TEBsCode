@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
+#include <math.h>
+#define PI 3.14159265358979323846
 using namespace std;
+
 
 //Swap to integers
 void swapInts(int* x, int* y)
@@ -32,3 +35,14 @@ void bubbleSort(int array_contents[], int array_size)
 		}
 	}
 }
+
+//MATH
+double DegToRad(double deg)
+{
+	return deg * PI / 180;
+}
+double RadToDeg(double rad)
+{
+	return rad * 180 / PI;
+}
+

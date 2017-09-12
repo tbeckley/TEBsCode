@@ -9,6 +9,7 @@
 #include <math.h> 
 #include <iomanip>
 
+
 #include "thomasHeader.h"
 using namespace std;
 
@@ -29,17 +30,25 @@ void printArray(int arrayContents[], int arraySize, int rowWidth, int endLines)
 		cout << endl;
 }
 
+double squareMe(double x)
+{
+	return x*x;
+}
+
+double getIRC(double(*ptr)(double), int x)
+{
+	double width = .001;
+	double low = ptr(x - (width / 2));
+	double high = ptr(x + (width / 2));
+	double irc = (high - low) / width;
+	return irc;
+}
+
 int main()
 {
 	srand((unsigned int)time(NULL)); //SEED RANDOM NUMBER GEN
 
-	int x = 4, y = 3;
-	swapInts(&x, &y);
-	cout << x << "  |  " << y << endl;
-
-	int stuff[2];  , 3];
-
-
+	cout << getIRC(squareMe, 4) << endl;
 	system("pause");
 	return 0;
 }
@@ -67,3 +76,4 @@ void arrayAction()
 	cout << "SORTED" << endl;
 	printArray(array_contents, array_size, row_width, 2);
 }
+

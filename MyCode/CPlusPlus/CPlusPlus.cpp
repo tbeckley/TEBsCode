@@ -13,70 +13,79 @@
 #include "thomasHeader.h"
 using namespace std;
 
-void arrayAction();
+void part1();
+void part3();
 
-double squareMe(double x)
-{
-	return x*x;
-}
 
-double getIRC(double(*ptr)(double), int x)
-{
-	double width = .001;
-	double low = ptr(x - (width / 2));
-	double high = ptr(x + (width / 2));
-	double irc = (high - low) / width;
-	return irc;
-}
 
 int main()
 {
-	cout << AdvMath.H(4) << endl;
-
-
-	srand((unsigned int)time(NULL)); //SEED RANDOM NUMBER GEN
-
-	arrayAction();
-
+	part1();
 	system("pause");
 	return 0;
 }
 
-void arrayAction()
+void part1()
 {
-	//CONSTANTS
-	const int array_size = 16;
-	const int row_width = 4;
-	const int max_val = 100;
+	const int SECONDS_PER_MINUTE = 60;
+	const int SECONDS_PER_HOUR = SECONDS_PER_MINUTE*60;
+	const int SECONDS_PER_DAY = SECONDS_PER_HOUR*24;
+	const int SECONDS_PER_WEEK = SECONDS_PER_DAY*7;
 
-	int array_contents[array_size];
+	int seconds = 0;
+	cout << "How many seconds is it: ";
+	cin >> seconds;
+	cout << "You entered " << seconds << " seconds" << endl;
 
-	//FILL
-	for (int i = 0; i < array_size; i++)
-		array_contents[i] = rand() % max_val;
+	int weeks = seconds / SECONDS_PER_WEEK; 
+	seconds = seconds%SECONDS_PER_WEEK;
+	int days = seconds / SECONDS_PER_DAY; 
+	seconds = seconds%SECONDS_PER_DAY;
+	int hours = seconds / SECONDS_PER_HOUR; 
+	seconds = seconds%SECONDS_PER_HOUR;
+	int minutes = seconds / SECONDS_PER_MINUTE; 
+	seconds = seconds%SECONDS_PER_MINUTE;
 
-	//PRINT
-	bubbleSort(array_contents, array_size);
-	printArrayVert(array_contents, array_size);
+	cout << "Weeks: " << weeks << endl;
+	cout << "Days: " << days << endl;
+	cout << "Hours: " << hours << endl;
+	cout << "Minutes: " << minutes << endl;
+	cout << "Seconds: " << seconds << endl;
+}
 
-	int target = 0;
+void part3()
+{
 
-	while (target != -1)
-	{
-		cout << "What to find: ";
-		cin >> target;
+	const double MILES_IN_KM = 1.609344;
+	const double FARENHEIT_IN_CELCIUS = 1.8;
+	const double FARENHEIT_OFFSET = 32;
 
-		if (target == -1)
-			break;
+	double windSpeed = 0, temperature = 0;
 
-		int loc = findInArray(array_contents, array_size, target);
-		if (loc != -1)
-			cout << "Location: " << loc << endl;
-		else
-			cout << "Not found" << endl;
-	}
+	cout << "What is the wind speed (km/h): ";
+	cin >> windSpeed;
+	cout << "You entered " << temperature << " km/h";
 
-	//PRINT
-	cout << "SORTED" << endl;
-	printArray(array_contents, array_size, row_width, 2);
+	cout << "What is the temperature (degrees celcius): ";
+	cin >> temperature;
+	cout << "You entered " << temperature << " degrees celcius";
+
+	
+	windSpeed = windSpeed / MILES_IN_KM;
+	temperature = (temperature * FARENHEIT_IN_CELCIUS) + 32;
+
+	double windChill;
+	if (windSpeed <= 4)
+
+		windChill = temperature;
+	else if (windSpeed > 45)
+		windChill = 1.6*temperature - 55.0;
+	else
+		windChill = 91.4 - 
+					(10.45 + 6.69*sqrt(windSpeed) - 0.447*windSpeed)*
+					(91.4 - temperature) / 22.0;
+
+	windChill = (windChill - 32) / FARENHEIT_IN_CELCIUS;
+	cout << "Wind chill index: " << windChill << " degrees celcius";
+
 }

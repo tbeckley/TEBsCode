@@ -1,12 +1,13 @@
 #pragma once
+#include "stdafx.h"
+
 #include <iostream>
-#include <math.h>
+#include <cstdlib>
+#include <ctime>
+#include <math.h> 
+#include <iomanip>
 #define PI 3.14159265358979323846
 using namespace std;
-
-
-//Swap to integers
-
 
 //Swap two integers
 void swapInts(int* x, int* y)
@@ -34,7 +35,7 @@ void bubbleSort(int array_contents[], int array_size)
 }
 
 //Print out array in a box
-void printArray(int arrayContents[], int arraySize, int rowWidth, int endLines)
+void printArrayBox(int arrayContents[], int arraySize, int rowWidth, int endLines)
 {
 	for (int i = 0; i < ceil(arraySize / rowWidth); i++)
 	{
@@ -59,28 +60,7 @@ void printArrayVert(int arrayContents[], int arraySize)
 	}
 }
 
-//Binary Search - Doesn't work
-/*int binarySearch(int arrayContents[], int arraySize, int target)
-{
-	int top = arraySize-1;
-	int bottom = 0;
-	int middle = 0;
-	int midVal = 0;
-	while (top != bottom)
-	{
-		int middle = floor((top + bottom) / 2);
-		int midVal = arrayContents[middle];
-
-		if (target > midVal)
-			top = middle + 1;
-		else if (target < midVal)
-			bottom = middle-1;
-		else
-			return middle;
-	}
-	return -1;
-}*/
-
+//Find in array
 int findInArray(int arrayContents[], int arraySize, int target)
 {
 	for (int i = 0; i < arraySize; i++)
@@ -89,16 +69,54 @@ int findInArray(int arrayContents[], int arraySize, int target)
 	return -1;
 }
 
-//Advanced math function
+//Get the length of an integer
+int intLength(int x)
+{
+	return (int)floor(log10(abs(x))) + 1;
+}
+
+//Advanced math functions
 class AdvMathHelper
 {
 public:
-
+	//HEAVISIDE
 	int H(int val)
 	{
 		return (int)(val > 0);
 	}
+
+	//INSTANT RATE OF CHANGE - VERY EXPERIMENTAL
+	double getIRC(double(*ptr)(double), int x)
+	{
+		double width = .001;
+		double low = ptr(x - (width / 2));
+		double high = ptr(x + (width / 2));
+		double irc = (high - low) / width;
+		return irc;
+	}
+
+	//HERON'S FORMULA FOR AREA OF A TRIANGLE
+	double heronFormula(double a, double b, double c)
+	{
+		double s = (a + b + c) / 2;
+		return sqrt(s*(s - a)*(s - b)*(s - c));
+	}
+
 };
 
-//
+//PADS NUMBER WITH COMMAS
+void printComma(int x)
+{
+	int digits = intLength(x);
+
+	for (int i = digits - 1; i >= 0; i--)
+	{
+		int val = (int)(x / pow(10, i));
+		val = val % 10;
+		cout << val;
+		if (i % 3 == 0 && i != 0)
+			cout << ",";
+	}
+	cout << endl;
+}
 AdvMathHelper AdvMath;

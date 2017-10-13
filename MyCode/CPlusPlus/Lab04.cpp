@@ -1,5 +1,4 @@
-// CPlusPlus.cpp : Defines the entry point for the console application.
-//
+
 
 #include "stdafx.h"
 
@@ -9,8 +8,6 @@
 #include <math.h> 
 #include <iomanip>
 
-
-#include "thomasHeader.h"
 using namespace std;
 
 void part1();
@@ -18,7 +15,7 @@ void part3();
 
 
 
-int main()
+int lab4()
 {
 	part1();
 	system("pause");

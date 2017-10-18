@@ -1,6 +1,4 @@
 # TEBsCode
-All of my public code!
+All of my public code (sort of).
 
-
-I'm trying out github! Yay?
-Anyway, this is a branch test!
+Mostly just school labs and other stuff I don't have any other place for.

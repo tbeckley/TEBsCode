@@ -14,7 +14,7 @@ void l5part1();
 void l5part2();
 void l5part3();
 
-int main(void)
+int l5Mail(void)
 {
 	l5part3();
 	system("pause");

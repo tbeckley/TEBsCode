@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Lab04.cpp" />
     <ClCompile Include="Lab05.cpp" />
+    <ClCompile Include="Lab06.cpp" />
     <ClCompile Include="Prep-Session.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -15,9 +15,23 @@ void l6part2();
 void l6part3();
 void l6part4();
 
+int factorial(int n)
+{
+	cout << "Start of factorial function with n = " << n << endl;
+
+	int x;
+	if (n == 1)
+		x = 1;
+	else
+		x = n * factorial(n - 1);
+
+	cout << "End of factorial function with n = " << n << endl;
+	return x;
+}
+
 int main(void)
 {
-	l6part4();
+	cout << factorial(5);
 	system("pause");
 	return 0;
 }

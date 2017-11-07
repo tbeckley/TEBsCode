@@ -1,6 +1,3 @@
-#pragma once
-#include "stdafx.h"
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

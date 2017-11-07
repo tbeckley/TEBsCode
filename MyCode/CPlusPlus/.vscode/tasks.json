@@ -6,12 +6,15 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g ./*"
+                "-c ./*"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

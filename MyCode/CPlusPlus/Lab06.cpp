@@ -1,4 +1,6 @@
-#include "stdafx.h"
+#include<iostream>
+#include<cmath>
+#include<ctime>
 
 using namespace std;
 

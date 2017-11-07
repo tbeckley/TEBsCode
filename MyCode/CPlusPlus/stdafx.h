@@ -6,9 +6,16 @@
 #pragma once
 
 #include "targetver.h"
-
 #include <stdio.h>
 #include <tchar.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <math.h> 
+#include <iomanip>
+#include <time.h>
+
+#include "thomasHeader.h"
 
 
 

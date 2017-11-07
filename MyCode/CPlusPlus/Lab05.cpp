@@ -55,7 +55,6 @@ void l5part2()
 void l5part3()
 {
 	cout << setprecision(12);
-	double PI = 3.14159265358979323846;
 
 	double tolerance = 0.0;
 

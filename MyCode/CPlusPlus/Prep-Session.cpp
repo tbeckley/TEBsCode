@@ -1,13 +1,5 @@
 #include "stdafx.h"
 
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <math.h> 
-#include <iomanip>
-#include <time.h>
-#include "thomasHeader.h"
-
 using namespace std;
 
 int oldmain()
@@ -23,7 +15,7 @@ int oldmain()
 	for (int i = 0; i < size; i++)
 		cout << i << " | " << num_array[i]<< endl;
 	cout << endl;
-	bubbleSort(num_array, 100);
+	//bubbleSort(num_array, 100);
 
 	cout << "Sorted" << endl;
 	for (int i = 0; i < size; i++)

@@ -1,12 +1,4 @@
-
-
 #include "stdafx.h"
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <math.h> 
-#include <iomanip>
-#include <time.h>
 
 using namespace std;
 
@@ -29,12 +21,12 @@ int factorial(int n)
 	return x;
 }
 
-int main(void)
+/*int main(void)
 {
 	cout << factorial(5);
 	system("pause");
 	return 0;
-}
+}*/
 
 void printRoot(double real, double imaginary)
 {

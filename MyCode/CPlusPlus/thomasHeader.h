@@ -10,19 +10,18 @@
 using namespace std;
 
 //Swap two integers
-void swapInts(int* x, int* y)
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <math.h> 
+#include <iomanip>
+#include <time.h>
+
+/*void swapInts(int* x, int* y)
 {
-	int valX;
-	int valY;
-
-	valX = *x;
-	valY = *y;
-
-	int newX = valY;
-	int newY = valX;
-
-	*x = newX;
-	*y = newY;
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 //Bubble Sort Array
@@ -32,7 +31,7 @@ void bubbleSort(int array_contents[], int array_size)
 		for (int i = 0; i < x; i++)
 			if (array_contents[i] < array_contents[i + 1])
 				swapInts(&array_contents[i], &array_contents[i + 1]);
-}
+}*/
 
 //Print out array in a box
 void printArrayBox(int arrayContents[], int arraySize, int rowWidth, int endLines)
@@ -66,6 +65,7 @@ int findInArray(int arrayContents[], int arraySize, int target)
 	for (int i = 0; i < arraySize; i++)
 		if (arrayContents[i] == target)
 			return i;
+
 	return -1;
 }
 
@@ -76,17 +76,17 @@ int intLength(int x)
 }
 
 //Advanced math functions
-class AdvMathHelper
+class AdvMath
 {
 public:
 	//HEAVISIDE
-	int H(int val)
+	static int H(int val)
 	{
 		return (int)(val > 0);
 	}
 
 	//INSTANT RATE OF CHANGE - VERY EXPERIMENTAL
-	double getIRC(double(*ptr)(double), int x)
+	static double getIRC(double(*ptr)(double), int x)
 	{
 		double width = .001;
 		double low = ptr(x - (width / 2));
@@ -96,7 +96,7 @@ public:
 	}
 
 	//HERON'S FORMULA FOR AREA OF A TRIANGLE
-	double heronFormula(double a, double b, double c)
+	static double heronFormula(double a, double b, double c)
 	{
 		double s = (a + b + c) / 2;
 		return sqrt(s*(s - a)*(s - b)*(s - c));
@@ -119,4 +119,3 @@ void printComma(int x)
 	}
 	cout << endl;
 }
-AdvMathHelper AdvMath;

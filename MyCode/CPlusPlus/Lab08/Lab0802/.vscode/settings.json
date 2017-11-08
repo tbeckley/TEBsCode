@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp",
+        "utility": "cpp",
+        "cmath": "cpp",
+        "cstdlib": "cpp",
+        "ctime": "cpp",
+        "xtr1common": "cpp"
+    }
+}

@@ -1,28 +1,32 @@
-#include<cmath>
-#include<iostream>
-#include<ctime>
-#include<fstream>
-#include<string.h>
+#include <iostream>
+#include <fstream>
+#include "matrixmath.h"
+using namespace std;
 
-int main()
+int main(void)
 {
-    // open input file stream
-    ifstream infile("marks.txt");
+    ifstream infile("matrices.txt");
     if (infile.fail())
     {
-        cout << "failed to open marks.txt." << endl;
+        cout << "failed to open matrices.txt." << endl;
         exit(1);
-    } // open output file stream
-    ofstream outfile("grades.txt");
+    }
+
+    ofstream outfile("resultant.txt");
     if (outfile.fail())
     {
-        cout << "Error opening output file grades.txt" << endl;
+        cout << "Error opening output file resultant.txt" << endl;
         exit(1);
-    } // set output stream formatting
+    }
+
     outfile.setf(ios::fixed);
     outfile.precision(1);
-    process_grades(infile, outfile);
+
+    calc_result(infile, outfile);
+
     infile.close();
     outfile.close();
+
+    system("pause");
     return 0;
 }

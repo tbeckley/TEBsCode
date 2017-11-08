@@ -8,6 +8,10 @@
         "cmath": "cpp",
         "cstdlib": "cpp",
         "ctime": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "xiosbase": "cpp",
+        "fstream": "cpp"
     }
 }

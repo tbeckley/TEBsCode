@@ -2,7 +2,7 @@
 //  Student Name:  Thomas Beckley
 //  Student Number: 20703455
 //
-//  SYDE121    Lab: 08 Assignment: 01
+//  SYDE121    Lab: 08 Assignment: 02
 //
 //  Filename: matrixmath.h
 //  Date submitted: 2017 - 11 - 07
@@ -13,6 +13,8 @@
 //  not been plagiarized from other sources and
 //  has not been knowingly plagiarized by others.
 //*********************************************
+#ifndef MATRIXMATH_H
+#define MATRIXMATH_H
 #include<iostream>
 #include<fstream>
 
@@ -25,3 +27,4 @@ void init_100_big_array(int array[][100], const int rows);
 void mutliply_100_matrices(int res[][100], const int a[][100], const int b[][100], const int resCol, const int resRow, const int numberIterations);
 
 void calc_result(std::ifstream &in,std::ostream &out);
+#endif

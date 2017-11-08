@@ -2,7 +2,7 @@
 //  Student Name:  Thomas Beckley
 //  Student Number: 20703455
 //
-//  SYDE121    Lab: 08 Assignment: 01
+//  SYDE121    Lab: 08 Assignment: 02
 //
 //  Filename: matrixmath.cpp
 //  Date submitted: 2017 - 11 - 07

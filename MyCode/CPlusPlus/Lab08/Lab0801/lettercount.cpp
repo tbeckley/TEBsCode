@@ -1,9 +1,26 @@
+//*********************************************
+//  Student Name:  Thomas Beckley
+//  Student Number: 20703455
+//
+//  SYDE121    Lab: 08 Assignment: 01
+//
+//  Filename: letercount.cpp
+//  Date submitted: 2017 - 11 - 07
+//
+//  I hereby declare that this code, submitted
+//  for credit for the course SYDE121, is a product
+//  of my own efforts.  This coded solution has
+//  not been plagiarized from other sources and
+//  has not been knowingly plagiarized by others.
+//*********************************************
+
 #include <string>
 #include <iostream>
 #include <fstream>
 #include "lettercount.h"
-//Begin implementation file lettercount.cpp
+
 using namespace std;
+//Begin implementation file lettercount.cpp
 
 void performCounting(ifstream &in, ofstream &out)
 {

@@ -5,6 +5,9 @@
         "type_traits": "cpp",
         "xutility": "cpp",
         "utility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "cstdlib": "cpp",
+        "limits": "cpp",
+        "cmath": "cpp"
     }
 }

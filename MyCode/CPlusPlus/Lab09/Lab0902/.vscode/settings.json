@@ -8,6 +8,7 @@
         "iostream": "cpp",
         "cstdlib": "cpp",
         "limits": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "xlocale": "cpp"
     }
 }

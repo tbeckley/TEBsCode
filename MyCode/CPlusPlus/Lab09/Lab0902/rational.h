@@ -1,3 +1,6 @@
+#ifndef RATIONAL_H
+#define RATIONAL_H
+
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
@@ -9,48 +12,51 @@ class Rational
   public:
     Rational();
     Rational(int top, int bottom);
+
     double getDecimal();
-    double getNumerator();
-    double getDenominator();
+    int getNumerator() const;
+    int getDenominator() const;
     void setNumerator(int val);
     void setDenominator(int val);
 
-    void add(Rational num);
-    void subtract(Rational num);
+    Rational addition(const Rational& num);
+    Rational subtraction(const Rational& num);
 
-    void multiply(Rational num);
-    void divide(Rational num);
+    Rational multiplication(const Rational& num);
+    Rational division(const Rational& num);
     void invert();
 
     void printRational();
-    void printDouble();
-    void simplify();
+    void printRationalAsFloating();
+    
   private:
     int _neu;
     int _den;
+    void reduction();
 };
 
 #pragma region Constructors
 //Constructors
 Rational::Rational()
 {
-    _neu = 0;
-    _den = 0;
+    _neu = 1;
+    _den = 1;
 }
 Rational::Rational(int top, int bottom)
 {
     _neu = top;
     _den = bottom;
+    reduction();
 }
 #pragma endregion
 
 #pragma region Getters / Setterss
 //Accesor functions 'getters and setters'
-double Rational::getNumerator()
+int Rational::getNumerator() const
 {
     return _neu;
 }
-double Rational::getDenominator()
+int Rational::getDenominator() const
 {
     return _den;
 }
@@ -86,7 +92,7 @@ int gcf(int a, int b)
     return 1;
 }
 
-void Rational::simplify()
+void Rational::reduction()
 {
     //If something is negative
     if (_neu * _den < 0)
@@ -116,41 +122,33 @@ void Rational::invert()
 
 #pragma region Assignment functions
 
-void Rational::add(Rational num)
+Rational Rational::addition(const Rational& num)
 {
-    num.simplify();
-    simplify(); //LOWEST FORM
-
     int newDen = lcm(num.getDenominator(), _den);
-    _neu = _neu * newDen / _den + num.getNumerator() * newDen / num.getDenominator();
-    _den = newDen;
-    //simplify();
+    return Rational(_neu * newDen / _den + num.getNumerator() * newDen / num.getDenominator(), newDen);
 }
-void Rational::subtract(Rational num)
+Rational Rational::subtraction(const Rational& num)
 {
-    num.simplify();
-    num.setNumerator(num.getNumerator() * -1);
-    add(num);
+    int newDen = lcm(num.getDenominator(), _den);
+    return Rational(_neu * newDen / _den - num.getNumerator() * newDen / num.getDenominator(), newDen);
 }
-void Rational::multiply(Rational num)
+Rational Rational::multiplication(const Rational& num)
 {
-    _neu *= num.getNumerator();
-    _den *= num.getDenominator();
-    simplify();
+    return Rational(_neu * num.getNumerator(), _den * num.getDenominator());
 }
-void Rational::divide(Rational num)
+Rational Rational::division(const Rational& num)
 {
-    num.simplify();
-    num.invert();
-    multiply(num);
+    return Rational(_neu * num.getDenominator(), _den * num.getNumerator());
 }
 void Rational::printRational()
 {
     cout << _neu << "/" << _den;
 }
-void Rational::printDouble()
+void Rational::printRationalAsFloating()
 {
     cout << getDecimal();
 }
 
 #pragma endregion
+
+#endif

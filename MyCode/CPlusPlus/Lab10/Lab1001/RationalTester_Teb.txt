@@ -1,0 +1,18 @@
+#include "rational.h"
+
+int main(void)
+{
+    Rational a (1,2);
+    Rational b (-2,4);
+
+    cout << "A==B " << (a==b) << endl;
+    cout << "A!=B " << (a!=b) << endl;
+    cout << "A>B " << (a>b) << endl;
+    cout << "A<B " << (a<b) << endl;
+    cout << "A>=B " << (a>=b) << endl;
+    cout << "A<=B " << (a<=b) << endl;
+
+    system("pause");
+    return 1;
+
+}

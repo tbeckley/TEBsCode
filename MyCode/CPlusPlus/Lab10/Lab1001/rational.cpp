@@ -160,6 +160,26 @@ bool operator != (const Rational& r1, const Rational& r2)
     return !(r1==r2);
 }
 
+bool operator > (const Rational& r1, const Rational& r2)
+{
+    Rational x =r1-r2;
+    return (x._neu>0);
+}
+bool operator < (const Rational& r1, const Rational& r2)
+{
+    Rational x=r1-r2;
+    return (x._neu<0);
+}
+
+bool operator >= (const Rational& r1, const Rational& r2)
+{
+    return!(r1<r2);
+}
+bool operator <= (const Rational& r1, const Rational& r2)
+{
+    return !(r1>r2);
+}
+
 
 
 ostream& operator << (ostream& out, const Rational& r1)

@@ -1,7 +1,6 @@
 #ifndef RATIONAL_H
 #define RATIONAL_H
 
-#include <cmath>
 #include <cstdlib>
 #include <iostream>
 
@@ -21,9 +20,20 @@ class Rational
 
     Rational addition(const Rational& num);
     Rational subtraction(const Rational& num);
-
     Rational multiplication(const Rational& num);
     Rational division(const Rational& num);
+
+    friend Rational operator + (const Rational& r1, const Rational& r2);
+    friend Rational operator - (const Rational& r1, const Rational& r2);
+    friend Rational operator * (const Rational& r1, const Rational& r2);
+    friend Rational operator / (const Rational& r1, const Rational& r2);
+
+    friend bool operator == (const Rational& r1, const Rational& r2);
+    friend bool operator != (const Rational& r1, const Rational& r2);
+
+    friend ostream& operator << (ostream& out, const Rational& r1);
+    friend istream& operator >> (istream& in, Rational& r1);
+
     void invert();
 
     void printRational() const;

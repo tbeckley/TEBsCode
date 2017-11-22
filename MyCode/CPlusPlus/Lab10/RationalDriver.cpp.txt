@@ -1,5 +1,5 @@
 
-#include "RationalNumber.h"
+#include "rational.h"
 
 // can call this function 'operator+' but then will not compile because
 //  compiler will not know whether to use this 'operator' or the one
@@ -7,7 +7,7 @@
 // 'operator+' can be used outside the class
 RationalNumber add(const RationalNumber &a, const RationalNumber &b);
 
-int main()
+int maino()
 {
    cout << "Driver program for RationalNumber class." << endl << endl;
 

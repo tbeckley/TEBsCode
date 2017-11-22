@@ -1,5 +1,9 @@
-
 #include "rational.h"
+
+#include <cmath>
+#include <iostream>
+
+using namespace std;
 
 #pragma region Constructors
 //Constructors
@@ -91,12 +95,7 @@ void Rational::invert()
 Rational Rational::addition(const Rational& num)
 {
     int newDen = lcm(num.getDenominator(), _den);
-    int f1 = _neu*newDen/_den;
-    int f2 = num.getNumerator() * newDen / num.getDenominator();
-    int top=f1+f2;
-
-    Rational x (top,newDen);
-
+    Rational x ( _neu*newDen/_den + num.getNumerator() * newDen / num.getDenominator(), newDen);
     return x;
 }
 Rational Rational::subtraction(const Rational& num)
@@ -121,5 +120,66 @@ void Rational::printRationalAsFloating() const
 {
     cout << getDecimal();
 }
+
+#pragma endregion
+
+#pragma region Operator overloads
+
+Rational operator + (const Rational& r1, const Rational& r2)
+{
+    int newDen = lcm(r1._den, r2._den);
+    Rational x(r1._neu * newDen / r1._den + r2._neu * newDen / r2._den, newDen);
+    return x;
+}
+
+Rational operator - (const Rational& r1, const Rational& r2)
+{
+    int newDen = lcm(r1._den, r2._den);
+    Rational x(r1._neu * newDen / r1._den - r2._neu * newDen / r2._den, newDen);
+    return x;
+}
+
+Rational operator * (const Rational& r1, const Rational& r2)
+{
+    Rational x (r1._neu*r2._neu, r2._den*r1._den);
+    return x;
+}
+Rational operator / (const Rational& r1, const Rational& r2)
+{
+    Rational x (r1._neu*r2._den, r1._den*r2._neu);
+    return x;
+}
+
+bool operator == (const Rational& r1, const Rational& r2)
+{
+    Rational x =r1/r2;
+    return (x._neu==x._den);
+}
+bool operator != (const Rational& r1, const Rational& r2)
+{
+    return !(r1==r2);
+}
+
+
+
+ostream& operator << (ostream& out, const Rational& r1)
+{
+    if(r1._neu == 0)
+        out << 0;
+    else if(r1._den == 1)
+        out << r1._neu;
+    else
+        out << r1._neu << "/" << r1._den;
+    
+    return out;
+}
+
+istream& operator >> (istream& in, Rational& r1)
+{
+    char c; //handles the division sign
+    in >> r1._neu >> c >> r1._den;
+    return in;
+}
+
 
 #pragma endregion

@@ -1,4 +1,20 @@
 import java.io.*;
+<<<<<<< HEAD
+
+public class HelloWorld
+{
+    public HelloWorld()
+    {
+
+    }
+
+    public static void main(String [] args)
+    {
+        int x = 4+4;
+        System.out.println("Hi");
+    }
+}
+=======
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
@@ -14,3 +30,4 @@ public class HelloWorld {
        JOptionPane.showMessageDialog(null,"HI");
     }
  }
+>>>>>>> bcf6f32313c2a4bd91dcd389e72b52c641162b69

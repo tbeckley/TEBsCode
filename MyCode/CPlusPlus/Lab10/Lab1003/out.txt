@@ -1,0 +1,43 @@
+Size of array integers1 is 7
+Array after initialization:
+           0           0           0           0
+           0           0           0
+
+Size of array integers2 is 10
+Array after initialization:
+           0           0           0           0
+           0           0           0           0
+           0           0
+
+After input, the arrays contain:
+integers1:
+           1           2           3           4
+           5           6           7
+integers2:
+          12          23           3         445
+           6           7       89876         567
+          43          70
+
+
+Size of array integers3 is 7
+Array after initialization: 
+           1           2           3           4
+           5           6           7
+
+Assigning integers2 to integers1:
+integers1:
+           1           2           3           4
+           5           6           7
+integers2:
+          12          23           3         445
+           6           7       89876         567
+          43          70
+
+Evaluating: integers1 == integers2
+integers1[5] is 6
+Assigning 1000 to integers1[5]
+integers1:
+           1           2           3           4
+           5        1000           7
+
+Attempt to assign 1000 to integers1[15]

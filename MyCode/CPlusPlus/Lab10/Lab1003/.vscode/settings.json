@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp",
+        "cstdlib": "cpp",
+        "limits": "cpp",
+        "cmath": "cpp",
+        "xlocale": "cpp"
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "C_Cpp.errorSquiggles": "Disabled"
+}

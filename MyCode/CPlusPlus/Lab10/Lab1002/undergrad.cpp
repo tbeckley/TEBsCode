@@ -99,14 +99,20 @@ void Undergrad::print_grades()
 {
     cout << "Grades: ";
     for (int i = 0; i < 5; i++)
+    {
         cout << _grades[i];
+        if(i!=4)
+            cout << ", ";
+    }
     cout << endl;
 }
 #pragma endregion
 
 void Undergrad::print()
 {
-    cout << "I should print here" << endl;
+    Student::print();
+    cout << "Year: " <<_currentYear << "     Term: "<< _term<<"     Status: "<<_status<<endl;
+    print_grades();
 }
 
 int Undergrad::age_at_convocation()
@@ -115,7 +121,7 @@ int Undergrad::age_at_convocation()
     int yearsold = get_gradyear() - dob.get_year() - 1;
 
     //When in the year were they born?
-    if(m<5 ||m==5&&d<15)
+    if(dob.get_month()<5 ||dob.get_month()==5&&dob.get_day()<15)
         yearsold++;
         
 

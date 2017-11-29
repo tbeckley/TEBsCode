@@ -14,9 +14,9 @@ integers1:
            1           2           3           4
            5           6           7
 integers2:
-          12          23           3         445
-           6           7       89876         567
-          43          70
+         989           7          64         632
+           3           1          23           4
+        6161        1232
 
 
 Size of array integers3 is 7
@@ -26,18 +26,22 @@ Array after initialization:
 
 Assigning integers2 to integers1:
 integers1:
-           1           2           3           4
-           5           6           7
+         989           7          64         632
+           3           1          23           4
+        6161        1232
 integers2:
-          12          23           3         445
-           6           7       89876         567
-          43          70
+         989           7          64         632
+           3           1          23           4
+        6161        1232
 
 Evaluating: integers1 == integers2
-integers1[5] is 6
+They are equal
+
+integers1[5] is 1
 Assigning 1000 to integers1[5]
 integers1:
-           1           2           3           4
-           5        1000           7
+         989           7          64         632
+           3        1000          23           4
+        6161        1232
 
 Attempt to assign 1000 to integers1[15]

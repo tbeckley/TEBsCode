@@ -131,7 +131,6 @@ int Undergrad::age_at_convocation()
 #pragma region Destructors
 Undergrad::~Undergrad()
 {
-    //NOTHING HERE YET
-    //TODO
+    //No code needed specifically becaueys no memory allocated dynmaically
 }
 #pragma endregion

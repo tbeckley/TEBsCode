@@ -1,9 +1,21 @@
+//*********************************************
+//  Student Name:  Thomas Beckley
+//  Student Number: 20703455
+//
+//  SYDE121    Lab: 10  Assignment: 03
+//
+//  Filename: array.cpp
+//  Date submitted: 2017 - 11 - 07
+//
+//  I hereby declare that this code, submitted
+//  for credit for the course SYDE121, is a product
+//  of my own efforts.  This coded solution has
+//  not been plagiarized from other sources and
+//  has not been knowingly plagiarized by others.
+//*********************************************
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-// SD121ers - you might have to remove the relative path of
-//   the following ie. change to:
-//  #include "array.h"
 #include "array.h"
 
 Array::Array( const int arraySize )
@@ -22,17 +34,15 @@ Array::Array( const int arraySize )
 
 Array::Array( const Array &init ) : size( init.size )
 {
+      //COPY CONSTRUCTOR
       ptr = new int[size];
       for(int i = 0; i < size; i++)
             ptr[i]=init[i];
-      
-	// provide function body
 }
 
 Array::~Array()
 {
       delete ptr;
-	// provide function body
 }
 
 int Array::get_size() const 

@@ -5,14 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
+ 
             "name": "Debug (Launch)",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal",
-            "stopOnEntry": false,
-            "mainClass": "",
-            "args": ""
+            "preLaunchTask": "Launch class"
         },
     ]
 }

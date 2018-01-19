@@ -5,61 +5,42 @@ public class RPNParser
 {
     public static void printBounded(String s)
     {
-        System.out.println("START__"+s+"__END");
+        System.out.println("START__|"+s+"|__END");
     }
     public static void process(Stack s, String instructions)
     {
-        int b = instructions.indexOf(' ');
-        b = (b==-1) ? instructions.length() : b;
-        
-        String ins = instructions.substring(0, b);
-        printBounded(ins);
-        if(b == -1) //Last operator in string
-            ins = instructions;
+        //TODO: Parse string recursively
+        int firstSpace = instructions.indexOf(' ');
+        String front = instructions;
+        String back = "";
+
+        if(firstSpace!=-1)
+        {
+            front = instructions.substring(0,firstSpace);
+            back = instructions.substring(firstSpace+1);
+        }
 
         try 
         {
-            //Check if is a number - if Double.parseDouble fails, not a number
-            s.push(Double.parseDouble(ins));
-        }
-
+            //Assume double - Inner section evaluated first
+            s.push(Double.parseDouble(front));
+        } 
         catch (Exception e) 
         {
-            if(ins.length() == 1) 
+            //Only situation - Parse fails
+            switch(front.charAt(0))
             {
-                char operator = ins.charAt(0);
-                double n1, n2;
-                try 
-                {
-                    n1 = s.pop();
-                    n2 = s.pop();
-
-                    switch(operator)
-                    {
-                        case '+':   s.push(n1+n2);
-                                    break;
-                        case '-':   s.push(n1-n2);
-                                    break;
-                        case '*':   s.push(n1*n2);
-                                    break;
-                        case '/':   s.push(n1/n2);
-                                    break;
-                        default:    System.out.println("'" + operator + "' is not a valid operator");
-                                    break;
-                    }
-                } 
-                catch (Exception ex)
-                {
-                    //Not two numbers on the stack...
-                    System.out.println("Two numbers not on the stack. Returning.");
-                    return;
-                }
+                case '+': s.push(s.pop()+s.pop()); break;
+                case '-': s.push(s.pop()-s.pop()); break;
+                case '*': s.push(s.pop()*s.pop()); break;
+                case '/': s.push(s.pop()/s.pop()); break;
+                default: System.out.println("Unkown operator");
             }
         }
-
-        if(b+1 <= ins.length())
-            process(s, instructions.substring(b+1));
-
+        
+        //Recurse if there is another operator left
+        if(firstSpace != -1)
+            process(s, back);
     }
     public static void main(String [] args)
     {
@@ -71,7 +52,6 @@ public class RPNParser
         process(myStack, result);
         myStack.cascadingPrint();
         input.close();
-        
     }
     
 }

@@ -1,0 +1,21 @@
+//*********************************************
+//  Student Name:  Thomas Beckley
+//  Student Number: 20703455
+//
+//  SYDE121    Lab: 03  Assignment: 02
+//
+//  Filename: Lab0302.txt
+//  Date submitted: 2017 - 09 - 27
+//
+//  I hereby declare that this code, submitted
+//  for credit for the course SYDE121, is a product
+//  of my own efforts.  This coded solution has
+//  not been plagiarized from other sources and
+//  has not been knowingly plagiarized by others.
+//*********************************************
+
+1) The program does not keep running. It hangs in an infinite loop and eventually crashes. No output appears.
+
+2) The program does keep running. It results in a value of "inf", (infinity).
+
+3) The program completes successfully, the square root of a negative number results in nan (not a number). 

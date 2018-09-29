@@ -1,0 +1,6 @@
+2(a) - Printed an extra row (i=10, squared=100)
+2(b) - Printed all rows on the same line without line breaks
+2(c) - Prints only the odd numbers of i (3,5,7,9)
+2(d) - error: expected primary-expression before ')' token - Thhis error occoured because i+ is not a valid expression. A for loop requires three expressions, and there were only two here.
+2(e) - error: expected ';' before 'i' - This error occoured because a semicolon was missing between creating the variable i and the beginning of the for loop.
+2(f) - fatal error:  iostream: No such file or directory - This is becasue the system could not find the required references ( iostream, with a space in front). The only existing one is iostream, without a space in front.

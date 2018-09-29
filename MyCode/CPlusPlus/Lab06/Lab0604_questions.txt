@@ -1,0 +1,3 @@
+1) The recursive method is easier to write, as it makes much more sense logically considering the fibonacci sequence is inherantly recursive (relies on previous terms).
+
+2) The non recursive method is significantly quicker to run, as for the recursive method it has to  calculate every previous term in order to calculate one, then recalculate everything to calculate the next one. Additionally, much more memory has to be used storing separate instances of the function and parameters.

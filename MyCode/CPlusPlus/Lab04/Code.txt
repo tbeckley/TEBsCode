@@ -1,0 +1,119 @@
+// CPlusPlus.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <math.h> 
+#include <iomanip>
+
+
+#include "thomasHeader.h"
+using namespace std;
+
+void question1();
+void question2();
+void question3();
+
+int main()
+{
+	question3();
+	system("pause");
+	return 0;
+}
+
+void question1()
+{
+	int size = 0;
+
+	cout << "What is the size of the square: ";
+	cin >> size;
+	cout << "The size of the square is: " << size << endl;
+	while (6 > size || size > 20)
+	{
+		cout << "Error. Size must be between 6 and 20. What is the size of the square: ";
+		cin >> size;
+		cout << "The size of the square is: " << size << endl;
+	}
+
+
+
+	int x = 0, y = 0;
+
+	while (y < size)
+	{
+		x = 0;
+		while (x < size)
+		{
+			if (x == 0 || x == size - 1 || y == 0 || y == size - 1)
+				cout << "*";
+			else
+				cout << " ";
+
+			x++;
+		}
+		cout << endl;
+		y++;
+	}
+}
+
+void question2()
+{
+	int numberToFactorial = 0;
+	cout << "What is the number: ";
+	cin >> numberToFactorial;
+
+	unsigned int result = 1;
+
+	while (numberToFactorial > 0)
+	{
+		result *= numberToFactorial;
+		numberToFactorial--;
+	}
+
+	cout << "Result: " << result << endl;
+}
+
+void question3()
+{
+	srand(time(NULL));
+	int studentInput = 0;
+	int correct = 0, questions = 0;
+	do
+	{
+		int num1 = rand() % 10;
+		int num2 = rand() % 10;
+
+		bool perfect = true;
+
+		do
+		{
+			cout << "What is " << num1 << " times " << num2 << "?" << endl;
+			cin >> studentInput;
+
+			if (studentInput == num1*num2)
+				cout << "Correct!" << endl;
+			else
+			{
+				cout << "Incorrect." << endl;
+				perfect = false;
+			}
+
+			
+			
+		} while (studentInput != num1*num2 && studentInput != -1);
+
+		if (perfect)
+			correct++;
+
+		questions++;
+
+	} while (studentInput != -1);
+	questions--;
+
+	cout << correct << " questions were answered correctly on the first time out of " << 
+		questions << " total." << endl;
+
+}

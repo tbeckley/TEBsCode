@@ -1,0 +1,5 @@
+1) The largest factorial it can successfully comptue and fit in memory is 14
+2) When it fails, an integer overflow is caused. Below are the computed values accordng to the program. Since the result for 15 factorial is obviously not 15 times greater than 14 factorial, there is an integer overflow. The program continues, but with the 'wrong' value.
+
+1278945280 - 14!
+2004310016 - 15!
